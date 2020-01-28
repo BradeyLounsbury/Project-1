@@ -1,3 +1,4 @@
+//Container class for Runtime objects
 #include <iostream>
 #include "Runtime.h"
 #include "MyTime.h"
@@ -21,6 +22,8 @@ class Runjournal {
     void record(Runtime& r1);
 
     void display();
+
+    void find_remove(Runtime& r1);
 
 
     private:

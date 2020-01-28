@@ -29,6 +29,19 @@ void Runjournal::record(Runtime& r1) {
 void Runjournal::display() {
     for (size_t i = 0; i < used; i++)
     {
-        cout << runs[i] << endl;
+        cout << "Run " << (i + 1) << ": \n" << runs[i] << endl;
     }
+}
+
+void Runjournal::find_remove(Runtime& r1) {
+    for (size_t i = 0; i < used; i++)
+    {
+        if (runs[i] == r1)
+        {
+            runs[i] = runs[used - 1];
+            used--;
+            return;
+        }
+    }
+    cout << "Not found" << endl;
 }

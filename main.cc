@@ -20,11 +20,11 @@ int menu();
 int main( ){
     Runtime tmp;
 // Test your input and output operators with this:
-	cout<<"Enter a run: ";
-    cin>>tmp;
-    cout<<"Here it is: ";
-    cout<<tmp<<endl;
-    cout<<"Good-bye.\n";
+	// cout<<"Enter a run: ";
+    // cin>>tmp;
+    // cout<<"Here it is: ";
+    // cout<<tmp<<endl;
+    // cout<<"Good-bye.\n";
 
 
     Runjournal myruns;  //Default constructor 1st
@@ -50,10 +50,10 @@ int main( ){
 	       	myruns.record(tmp);  //2nd
 		break;
 
-/*	case 2:  cin>>tmp;
+	case 2:  cin>>tmp;
 		myruns.find_remove(tmp);  //4th
 		break;
-*/
+
 	case 3:	myruns.display(); //3rd
 		break;
 
