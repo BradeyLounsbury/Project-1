@@ -4,8 +4,8 @@
 #include <iostream>
 #include <iomanip>
 using namespace std;
-// Constructor
 
+// Constructor
 MyTime::MyTime(int h, int m,int s){
 	hours = h;
 	minutes = m;
@@ -90,7 +90,6 @@ void MyTime::input(istream&ins){
         ins.get(junk);
         ins>>seconds;
         simplify();
-
 }
 
 void MyTime::output(ostream& outs)const{
@@ -108,4 +107,3 @@ istream& operator >> (istream& ins, MyTime& t1){
 	t1.input(ins);
 	return ins;
 }
-

@@ -10,6 +10,7 @@
 *******************************************************************/
 #include<iostream>
 #include<fstream>
+#include<cmath>
 #include "runtime.h"
 
 using namespace std;
@@ -17,19 +18,21 @@ using namespace std;
 int menu();
 
 int main( ){
-     Runtime tmp;
+    Runtime tmp;
+	Runtime tmp2;
 // Test your input and output operators with this:
-/*     cout<<"Enter a run: ";
-     cin>>tmp;
-     cout<<"Here it is: ";
-     cout<<tmp<<endl;
-     cout<<"Good-bye.\n";
-*/
+	cout<<"Enter a run: ";
+    cin>>tmp;
+    cout<<"Here it is: ";
+    cout<<tmp<<endl;
+    cout<<"Good-bye.\n";
+
+
 //     Runjournal myruns;  //Default constructor 1st
-     ifstream ifs;
-     ofstream ofs;
+    //  ifstream ifs;
+    //  ofstream ofs;
      int choice;
-     double dist;
+    //  double dist;
 //file loading - do last 12th
 /*     ifs.open("runlog.txt");
      if(!ifs.fail()){
@@ -95,19 +98,20 @@ return 0;
 }
 
 int menu( ){
-    int selection;
-    cout<<"Chose from the Following\n";
-    cout<<"1) RECORD a run\n";
-    cout<<"2) FIND a run by entering time and distance w option to remove\n";
-    cout<<"3) VIEW all the runs in the Journal\n";
-    cout<<"4) DISPLAY runs of a specific distance\n";
-    cout<<"5) SORT by TIME\n";
-    cout<<"6) SORT by DISTANCE\n";
-    cout<<"7) TOTAL TIME\n";
-    cout<<"8) TOTAL DISTANCE\n";
-    cout<<"9) AVERAGE PACE\n";
-    cout<<"0) QUIT\n";
+    // int selection;
+    // cout<<"Chose from the Following\n";
+    // cout<<"1) RECORD a run\n";
+    // cout<<"2) FIND a run by entering time and distance w option to remove\n";
+    // cout<<"3) VIEW all the runs in the Journal\n";
+    // cout<<"4) DISPLAY runs of a specific distance\n";
+    // cout<<"5) SORT by TIME\n";
+    // cout<<"6) SORT by DISTANCE\n";
+    // cout<<"7) TOTAL TIME\n";
+    // cout<<"8) TOTAL DISTANCE\n";
+    // cout<<"9) AVERAGE PACE\n";
+    // cout<<"0) QUIT\n";
 
-    cin>>selection;
-    return selection;
+    // cin>>selection;
+    // return selection;
+	return 0;
 }
