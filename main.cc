@@ -30,8 +30,8 @@ int main( ){
     Runjournal myruns;  //Default constructor 1st
     //  ifstream ifs;
     //  ofstream ofs;
-     int choice;
-    //  double dist;
+    int choice;
+    double dist;
 // file loading - do last 12th
 /*     ifs.open("runlog.txt");
      if(!ifs.fail()){
@@ -57,11 +57,11 @@ int main( ){
 	case 3:	myruns.display(); //3rd
 		break;
 
-/*	case 4:	cout<<"Enter a distance to view.\n";
+	case 4:	cout<<"Enter a distance to view.\n";
 		cin>>dist;
 		myruns.distance_view(dist); //5th
 		break;
-*/
+
 /*	case 5:	myruns.time_sort(); //6th
 		myruns.display();
 		break;

@@ -29,7 +29,7 @@ void Runjournal::record(Runtime& r1) {
 void Runjournal::display() {
     for (size_t i = 0; i < used; i++)
     {
-        cout << "Run " << (i + 1) << ": \n" << runs[i] << endl;
+        cout << "\nRun " << (i + 1) << ":" << runs[i] << endl;
     }
 }
 
@@ -44,4 +44,14 @@ void Runjournal::find_remove(Runtime& r1) {
         }
     }
     cout << "Not found" << endl;
+}
+
+void Runjournal::distance_view(double& d) {
+    for (size_t i = 0; i < used; i++)
+    {
+        if (runs[i].distance_equal(d))
+        {
+            cout << runs[i] << endl;
+        }
+    }
 }

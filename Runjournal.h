@@ -25,6 +25,8 @@ class Runjournal {
 
     void find_remove(Runtime& r1);
 
+    void distance_view(double& d);
+
 
     private:
     Runtime runs[200];
