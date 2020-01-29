@@ -64,18 +64,19 @@ void Runjournal::distance_view(double& d) {
 void Runjournal::time_sort() {
     Runtime tmp;
     size_t loc_small;
-    for (size_t i = 0; i < used - 1; i++)
+    for (size_t i = 0; i < used; i++)
     {
         loc_small = i;
         for (size_t j = 0; j < used; j++)
         {
-            if (runs[i].get_time() < runs[loc_small].get_time())
+            if (runs[loc_small].get_time() < runs[j].get_time())
             {
                 loc_small = j;
+                tmp = runs[i];
+                runs[i] = runs[loc_small];
+                runs[loc_small] = tmp;
             }
-            tmp = runs[i];
-            runs[i] = runs[loc_small];
-            runs[loc_small] = tmp;
+            
         }
     }
 }
