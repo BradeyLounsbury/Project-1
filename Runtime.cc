@@ -1,4 +1,9 @@
-// The implementation file for the Runtime class
+/**
+ *      Name: Bradey Lounsbury
+ *      Date: January 27, 2020
+ *      Email: bl396918@ohio.edu
+ *      Desc: Implementation file of "Runtime.h" 
+ */
 #include "Runtime.h"
 #include "MyTime.h"
 #include <cstdlib>
@@ -14,20 +19,23 @@ Runtime::Runtime() {
 
 
 //operators
-Runtime Runtime::operator + (const Runtime& r1) const {
+//adds two runtimes
+Runtime Runtime::operator + (const Runtime& rhs) const {
     Runtime tmp;
-    tmp.rtime = rtime + r1.rtime;
-    tmp.distance = distance + r1.distance;
+    tmp.rtime = rtime + rhs.rtime;
+    tmp.distance = distance + rhs.distance;
     return tmp;
 }
 
-Runtime Runtime::operator - (const Runtime& r1) const {
+//subtracts two runtimes
+Runtime Runtime::operator - (const Runtime& rhs) const {
     Runtime tmp;
-    tmp.rtime = rtime - r1.rtime;
-    tmp.distance = abs(distance - r1.distance);
+    tmp.rtime = rtime - rhs.rtime;
+    tmp.distance = abs(distance - rhs.distance);
     return tmp;
 }
 
+//multiplies a runtime and double (if in "Runtime * double" format)
 Runtime Runtime::operator * (const double& x) const {
     Runtime tmp;
     tmp.rtime = rtime * x;
@@ -35,11 +43,7 @@ Runtime Runtime::operator * (const double& x) const {
     return tmp;
 }
 
-// Runtime operator * (const double& x, const Runtime& r1) {
-//     Runtime tmp;
-//     tmp
-// }
-
+//divides a runtime by a double
 Runtime Runtime::operator / (const double& x) const {
     Runtime tmp;
     tmp.rtime = rtime / x;
@@ -47,19 +51,22 @@ Runtime Runtime::operator / (const double& x) const {
     return tmp;
 }
 
-bool Runtime::operator == (const Runtime& r1) const {
-    return (rtime == r1.rtime && distance == r1.distance);
+//compares two runtimes for equality
+bool Runtime::operator == (const Runtime& rhs) const {
+    return (rtime == rhs.rtime && distance == rhs.distance);
 }
 
-bool Runtime::operator != (const Runtime& r1) const {
-    return (rtime.get_hours() != r1.rtime.get_hours() ||
-            rtime.get_minutes() != r1.rtime.get_minutes() ||
-            rtime.get_seconds() != r1.rtime.get_seconds() ||
-            distance != r1.distance);
+//compares two runtimes for inequality
+bool Runtime::operator != (const Runtime& rhs) const {
+    return (rtime.get_hours() != rhs.rtime.get_hours() ||
+            rtime.get_minutes() != rhs.rtime.get_minutes() ||
+            rtime.get_seconds() != rhs.rtime.get_seconds() ||
+            distance != rhs.distance);
 }
 
 
 //helper
+//returns true if distance of runtime is within a tenth of d
 bool Runtime::distance_equal(double d) const {
     if (0 <= abs(distance - d) && 0.11 > abs(distance - d))
     {
@@ -84,12 +91,21 @@ void Runtime::output(ostream& outs) const {
     outs << "\nDistance: " << distance << " miles";
 }
 
-istream& operator >>(istream& ins, Runtime& r1) {
-    r1.input(ins);
+
+//non-member functions
+//multiplies runtime and double (if in "double * runtime" format)
+Runtime operator *(const double& lhs, const Runtime& rhs) {
+    Runtime tmp;
+    tmp = rhs * lhs;
+    return tmp;
+}
+
+istream& operator >>(istream& ins, Runtime& rhs) {
+    rhs.input(ins);
     return ins;
 }
 
-ostream& operator <<(ostream& outs, const Runtime& r1) {
-    r1.output(outs);
+ostream& operator <<(ostream& outs, const Runtime& rhs) {
+    rhs.output(outs);
     return outs;
 }

@@ -1,4 +1,9 @@
-// The implementation file for the Runjournal class
+/**
+ *      Name: Bradey Lounsbury
+ *      Date: January 28, 2020
+ *      Email: bl396918@ohio.edu
+ *      Desc: Implementation file of "Runjournal.h" 
+ */
 #include "Runjournal.h"
 #include "Runtime.h"
 #include "MyTime.h"
@@ -52,6 +57,25 @@ void Runjournal::distance_view(double& d) {
         if (runs[i].distance_equal(d))
         {
             cout << runs[i] << endl;
+        }
+    }
+}
+
+void Runjournal::time_sort() {
+    Runtime tmp;
+    size_t loc_small;
+    for (size_t i = 0; i < used - 1; i++)
+    {
+        loc_small = i;
+        for (size_t j = 0; j < used; j++)
+        {
+            if (runs[i].get_time() < runs[loc_small].get_time())
+            {
+                loc_small = j;
+            }
+            tmp = runs[i];
+            runs[i] = runs[loc_small];
+            runs[loc_small] = tmp;
         }
     }
 }
