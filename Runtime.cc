@@ -88,7 +88,7 @@ void Runtime::input(istream& ins) {
 void Runtime::output(ostream& outs) const {
     outs << "\nTime: ";
     rtime.output(outs);
-    outs << "\nDistance: " << distance << " miles";
+    outs << "\nDistance: " << fixed << setprecision(2) << distance << " miles";
 }
 
 

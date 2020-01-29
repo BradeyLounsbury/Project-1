@@ -1,4 +1,10 @@
-//Container class for Runtime objects
+/**
+ *      Name: Bradey Lounsbury
+ *      Date: January 28, 2020
+ *      Email: bl396918@ohio.edu
+ *      Desc: Header file of container class Runjournal which 
+ *      stores runs made from the MyTime.h and Runtime.h classes
+ */
 #include <iostream>
 #include "Runtime.h"
 #include "MyTime.h"
@@ -27,9 +33,11 @@ class Runjournal {
 
     void distance_view(double& d);
 
+    void time_sort();
+
 
     private:
-    Runtime runs[200];
+    Runtime runs[CAPACITY];
     size_t used;
 };
 
