@@ -28,21 +28,25 @@ int main( ){
 
 
     Runjournal myruns;  //Default constructor 1st
-    //  ifstream ifs;
-    //  ofstream ofs;
+    ifstream ifs;
+    ofstream ofs;
     int choice;
     double dist;
 // file loading - do last 12th
-/*     ifs.open("runlog.txt");
-     if(!ifs.fail()){
-	ifs>>tmp;
-	while(!ifs.eof()){
-	    myruns.record(tmp);
-	    ifs>>tmp;
+    ifs.open("runlog.txt");
+    if(!ifs.fail())
+	{
+		ifs>>tmp;
+		while(!ifs.eof())
+		{
+	    	myruns.record(tmp);
+	    	ifs>>tmp;
+		}
+		myruns.record(tmp);
 	}
 	ifs.close();
-     } // if the file is not there we assume this is the first running
-*/
+	// if the file is not there we assume this is the first running
+
      do{
 	choice = menu();
 	switch(choice){
@@ -62,23 +66,23 @@ int main( ){
 		myruns.distance_view(dist); //5th
 		break;
 
-/*	case 5:	myruns.time_sort(); //6th
+	case 5:	myruns.time_sort(); //6th
 		myruns.display();
 		break;
-*/
-/*	case 6:	myruns.distance_sort(); //7th
+
+	case 6:	myruns.distance_sort(); //7th
 		myruns.display();
 		break;
-*/
-/*	case 7:  cout<<myruns.total_time()<<endl; //8th
+
+	case 7:  cout<<myruns.total_time()<<endl; //8th
 		break;
-*/
-/*	case 8: cout<<myruns.total_distance()<<endl; // 9th
+
+	case 8: cout<<myruns.total_distance()<<endl; // 9th
 		break;
-*/
-/*	case 9: cout<<myruns.average_pace()<<endl; //10th
-	    	break;
-*/
+
+	case 9: cout<<myruns.average_pace()<<endl; //10th
+	    break;
+
 	case 0: cout<<"Thank you for using our software.\n";
 		break;
 	    default: cout<<"Not a valid selection.\n";
@@ -86,12 +90,12 @@ int main( ){
 	} // bottom of the switch
     	}while(choice != 0);
 //file saving
-/*	ofs.open("runlog.txt");
+	ofs.open("runlog.txt");
 	if(!ofs.fail()){
 	    myruns.save(ofs); //11th
 	    ofs.close();
  	}
-*/
+
 
 return 0;
 }

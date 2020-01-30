@@ -27,14 +27,23 @@ class Runjournal {
     //helpers
     void record(Runtime& r1);
 
-    void display();
+    void display() const;
 
     void find_remove(Runtime& r1);
 
-    void distance_view(double& d);
+    void distance_view(double& d) const;
 
     void time_sort();
 
+    void distance_sort();
+
+    MyTime total_time() const;
+
+    double total_distance() const;
+
+    MyTime average_pace() const;
+
+    void save(std::ofstream& ofs) const;
 
     private:
     Runtime runs[CAPACITY];
